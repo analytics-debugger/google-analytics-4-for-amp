@@ -12,6 +12,7 @@ If this has been useful for your business or work, show some appreciation :)
 ## Setup
 Just add the following code to your AMP Pages:
 
+```javascript
 <amp-analytics type="googleanalytics" config="https://amp.analytics-debugger.com/ga4.json" data-credentials="include">
 <script type="application/json">
 {
@@ -26,6 +27,7 @@ Just add the following code to your AMP Pages:
 }
 </script>
 </amp-analytics>
+```
 
 |Feature Name|Description|
 |--|--|
