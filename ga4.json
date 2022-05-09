@@ -76,9 +76,7 @@
         "sid": "$CALC(SESSION_TIMESTAMP, 1000, divide, true)",
         "sct": "SESSION_COUNT",
         "seg": "$IF($EQUALS(SESSION_ENGAGED, true),1,0)",
-        "_et": "$CALC(TOTAL_ENGAGED_TIME,1000, multiply)",
-        "_ss": "$IF($EQUALS($CALC(${timestamp},SESSION_TIMESTAMP, subtract),-1),1,0)",
-        "_fv": "$IF($EQUALS($CALC(SESSION_COUNT,$CALC(${timestamp},SESSION_TIMESTAMP, subtract), add),0),1,0)", 
+        "_et": "$CALC(TOTAL_ENGAGED_TIME,1000, multiply)",        
         "gcs": "$IF($EQUALS(${GOOGLE_CONSENT_ENABLED},TRUE),G10$IF($EQUALS(CONSENT_STATE,sufficient),1,0),)"                
     },    
     "extraUrlParamsReplaceMap": {
@@ -89,7 +87,9 @@
     },    
     "requestOrigin": "https://${GA4_ENDPOINT_HOSTNAME}",
     "requests": {
-        "ga4SharedPayload": "v=2&tid=${GA4_MEASUREMENT_ID}&ds=${dataSource}&_p=${pageViewId}&cid=${clientId}&ul=${browserLanguage}&sr=${screenWidth}x${screenHeight}&_s=${requestCount}&dl=${documentLocation}&dr=${externalReferrer}&dt=${title}",
+        "ga4IsFirstVisit": "$IF($EQUALS($CALC(SESSION_COUNT,$CALC(${timestamp},SESSION_TIMESTAMP, subtract), add),0),_fv,__nfv)",
+        "ga4IsSessionStart": "$IF($EQUALS($CALC(${timestamp},SESSION_TIMESTAMP, subtract),-1),_ss,__nss)",
+        "ga4SharedPayload": "v=2&tid=${GA4_MEASUREMENT_ID}&ds=${dataSource}&_p=${pageViewId}&cid=${clientId}&ul=${browserLanguage}&sr=${screenWidth}x${screenHeight}&_s=${requestCount}&dl=${documentLocation}&dr=${externalReferrer}&dt=${title}&${ga4IsFirstVisit}=1&${ga4IsSessionStart}=1",
         "ga4Pageview": {
             "baseUrl": "/g/collect?${ga4SharedPayload}&en=page_view"
         },        
