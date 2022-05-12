@@ -87,8 +87,8 @@
     },    
     "requestOrigin": "https://${GA4_ENDPOINT_HOSTNAME}",
     "requests": {
-        "ga4IsFirstVisit": "$IF($EQUALS($CALC(SESSION_COUNT,$CALC(${timestamp},SESSION_TIMESTAMP, subtract), add),0),_fv,__nfv)",
-        "ga4IsSessionStart": "$IF($EQUALS($CALC(${timestamp},SESSION_TIMESTAMP, subtract),-1),_ss,__nss)",
+        "ga4IsFirstVisit": "$IF($EQUALS($CALC(SESSION_COUNT, $CALC($CALC(${timestamp}, 1000, divide, true),$CALC(SESSION_TIMESTAMP, 1000, divide, true), subtract), add),1), _fv, __nfv )",
+        "ga4IsSessionStart": "$IF($EQUALS($CALC($CALC(${timestamp}, 1000, divide, true),$CALC(SESSION_TIMESTAMP, 1000, divide, true), subtract),0), _ss, __nss)",                
         "ga4SharedPayload": "v=2&tid=${GA4_MEASUREMENT_ID}&ds=${dataSource}&_p=${pageViewId}&cid=${clientId}&ul=${browserLanguage}&sr=${screenWidth}x${screenHeight}&_s=${requestCount}&dl=${documentLocation}&dr=${externalReferrer}&dt=${title}&${ga4IsFirstVisit}=1&${ga4IsSessionStart}=1",
         "ga4Pageview": {
             "baseUrl": "/g/collect?${ga4SharedPayload}&en=page_view"
