@@ -20,7 +20,7 @@
             "request": "ga4Pageview"
         },
         "doubleClick": {
-            "enabled": "${DEFAULT_PAGEVIEW_ENABLED}",
+            "enabled": "${SEND_DOUBLECLICK_BEACON}",
             "on": "visible",
             "request": "ga4Dc"
         },        
