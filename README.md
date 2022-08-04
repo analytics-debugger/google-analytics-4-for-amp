@@ -47,9 +47,7 @@ Just add the following code to your AMP Pages:
  
 
 |Feature Name|Description|
-
 |--|--|
-
 |GA4_MEASUREMENT_ID|Your `Measurement ID`, _**G-XXXXXXXX**_|
 |GA4_ENDPOINT_HOSTNAME|Override the default endpoint domain. In case you want to send the hits to your own server or a `Server Side GTM` Instance.|
 |GOOGLE_CONSENT_ENABLED|a &gcs parameter will be added to the payloads with the current Consent Status|
@@ -78,7 +76,7 @@ Just add the following code to your AMP Pages:
 -  **Document URL**
 -  **Document Referrer**
 -  **Unique Pageview Id** (**`&_p`**)
--  **Debug Mode Switch* (**`&_dbg=1`**)
+-  **Debug Mode Switch** (**`&_dbg=1`**)
 -  **Regional Data Collection* (**`region1.analytics-debugger.com`**)  
 
 ## In-Build Events
