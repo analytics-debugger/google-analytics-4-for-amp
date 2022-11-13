@@ -10,11 +10,14 @@ https://www.thyngster.com/how-to-track-amp-pages-with-google-analytics-4
 
 ## SUPPORT / DONATIONS
 
-I'm hosting a copy of the configuration file on my own CDN for those who are not easily able to host it themselves, which actually gets ( as of  July 2022)
+I'm hosting a copy of the configuration file on my own CDN for those who are not easily able to host it themselves, which actually gets ( as of  13th Nov 2022)
 
-- 381.59M hits
-- 841.2 GB Transfer BW
-- 124.49M Unique Visitors
+- 1.21B hits
+- 2.44TB Transfer BW
+- 282.01M Unique Visitors
+
+per month.
+
  
 I'd love to go into a higher tier on the CDN to improve the setup and have a more reliable service. So if my work helped you in fixing that tracking gap for GA4 and you would like to help on supporting the CDN costs show some appreciation by buying me some coffees I can keep working on this project and giving a free CDN service.
     
