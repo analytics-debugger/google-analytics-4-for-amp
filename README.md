@@ -4,17 +4,24 @@ AMP Analytics Config for Tracking AMP Pages using Google Analytics 4. This repos
 ## DISCLAIMER
 This isn't sponsored or supported in any way by Google, at the same time I don't know or there's any news about Google or AMP team to start giving official support to GA4 ( that's the reason for this project )
 
+## SERVICE STATUSna
+Because of the last outage of the CDN on Match 23-24th. We are currently monitoring the availability from NA, AU, EU and ASIA. 
+[![Better Uptime Badge](https://betteruptime.com/status-badges/v1/monitor/nz4k.svg)](https://betteruptime.com/?utm_source=status_badge)https://status.analytics-debugger.com/
+
+Status Page: https://status.analytics-debugger.com
+
 ## BLOG POST 
+
 Full configuration and information on:
 https://www.thyngster.com/how-to-track-amp-pages-with-google-analytics-4
 
 ## SUPPORT / DONATIONS
 
-I'm hosting a copy of the configuration file on my own CDN for those who are not easily able to host it themselves, which actually gets ( as of  13th Nov 2022)
+I'm hosting a copy of the configuration file on my own CDN for those who are not easily able to host it themselves, which actually gets (as of 25th Mar 2023)
 
-- 1.21B hits
-- 2.44TB Transfer BW
-- 282.01M Unique Visitors
+- 1.68B hits
+- 4.79TB Transfer BW
+- 548.92M Unique Visitors
 
 per month.
 
