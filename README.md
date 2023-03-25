@@ -4,9 +4,10 @@ AMP Analytics Config for Tracking AMP Pages using Google Analytics 4. This repos
 ## DISCLAIMER
 This isn't sponsored or supported in any way by Google, at the same time I don't know or there's any news about Google or AMP team to start giving official support to GA4 ( that's the reason for this project )
 
-## SERVICE STATUSna
+## SERVICE STATUS
 Because of the last outage of the CDN on Match 23-24th. We are currently monitoring the availability from NA, AU, EU and ASIA. 
-[![Better Uptime Badge](https://betteruptime.com/status-badges/v1/monitor/nz4k.svg)](https://betteruptime.com/?utm_source=status_badge)https://status.analytics-debugger.com/
+
+[![Better Uptime Badge](https://betteruptime.com/status-badges/v1/monitor/nz4k.svg)](https://betteruptime.com/?utm_source=status_badge)
 
 Status Page: https://status.analytics-debugger.com
 
