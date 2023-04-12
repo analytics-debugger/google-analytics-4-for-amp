@@ -100,7 +100,7 @@ Just add the following code to your AMP Pages:
 
 ## Cross-Domain Tracking
 To utilize the newly implemented core file session cross-linking feature, you can simply add a linker section to your <script>
-and specify the domains list along with your measurement IDs. 
+and specify the domains list along with your measurement IDs. Just after the vars: {} key.
 
 However, please note that AMP does not permit the definition of dynamic keys. Therefore, you must manually add the measurement ID and include multiple "ids"
 lines for each unique measurement ID you have.
@@ -120,10 +120,12 @@ lines for each unique measurement ID you have.
 It is important to note that if your measurement ID is "G-THYNGSTER", the "ids" key should be structured as "_ga_THYNGSTER". 
 After including these lines of code, when a user clicks on a crosslinked domain, the corresponding details will be transmitted to the destination domain.
 
-|Client ID|
-|Session ID|
-|Session Count|
-|Session Engaged|
+|Data Key|Description|
+|--|--|
+|Client ID| Current Client Id from _ga cookie|
+|Session ID| Current Session ID to keep the session alive|
+|Session Count| Current Session Count so it get written on the destination cookie|
+|Session Engagement| If session is currently engaged|
 
 This ensures that the current user and session remain unchanged when the users navigate from your AMP to NON-AMP pages.
  
