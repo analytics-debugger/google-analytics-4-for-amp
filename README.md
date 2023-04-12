@@ -88,13 +88,45 @@ Just add the following code to your AMP Pages:
 -  **Document Referrer**
 -  **Unique Pageview Id** (**`&_p`**)
 -  **Debug Mode Switch** (**`&_dbg=1`**)
--  **Regional Data Collection* (**`region1.analytics-debugger.com`**)  
+-  **Regional Data Collection* (**`region1.google-analytics-com`**)  
+-  **Document Referrer**
+-  **Cross Domain Tracking**
+-  **User Agent Client Hints**
 
 ## In-Build Events
 
 -  **Web Vitals**
 -  **Performance Timing** 
 
+## Cross-Domain Tracking
+To utilize the newly implemented core file session cross-linking feature, you can simply add a linker section to your <script>
+and specify the domains list along with your measurement IDs. 
+
+However, please note that AMP does not permit the definition of dynamic keys. Therefore, you must manually add the measurement ID and include multiple "ids"
+lines for each unique measurement ID you have.
+
+```javascript
+"linkers": {
+    "enabled": true,
+    "destinationDomains": ["*.extenaldomain.com"],
+    "_gl": {
+        "ids": {
+            "_ga_RNYCK86MYK": "${ga4SessionCookie}"
+        },
+        "proxyOnly": false
+    }
+}
+```
+It is important to note that if your measurement ID is "G-THYNGSTER", the "ids" key should be structured as "_ga_THYNGSTER". 
+After including these lines of code, when a user clicks on a crosslinked domain, the corresponding details will be transmitted to the destination domain.
+
+|Client ID|
+|Session ID|
+|Session Count|
+|Session Engaged|
+
+This ensures that the current user and session remain unchanged when the users navigate from your AMP to NON-AMP pages.
+ 
 ## Enable Debug Mode
 Add a ?_dbg=1 parameter to the current url to allow hits to show on GA4's DebugView
 
