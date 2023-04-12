@@ -108,10 +108,10 @@ lines for each unique measurement ID you have.
 ```javascript
 "linkers": {
     "enabled": true,
-    "destinationDomains": ["*.extenaldomain.com"],
+    "destinationDomains": ["*.externaldomain.io"],
     "_gl": {
         "ids": {
-            "_ga_RNYCK86MYK": "${ga4SessionCookie}"
+            "_ga_THYNGSTER": "${ga4SessionCookie}"
         },
         "proxyOnly": false
     }
