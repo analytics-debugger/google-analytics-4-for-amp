@@ -1,3 +1,20 @@
+## SUPPORT / DONATIONS
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Q5Q225ZVD)
+
+It's being a time consuming task to keep investigating this while Google decides to offer some proper official support,
+more even when I don't even run any AMP sites myself. 
+
+I'm also hosting a copy of the configuration file on my own CDN for those who are not easily able to host it themselves, which actually gets (as of 25th Mar 2023)
+
+- 1.85 hits
+- 5.28TB Transfer BW
+- 608.8M Unique Visitors per month.
+ 
+I'd love to go into a higher tier on the CDN to improve the setup and have a more reliable service. 
+
+Since I'me giving my time for free would be great getting back some support from people/companies using this solution to being able to track their AMP sites.  
+
 # Google Analytics for AMP
 AMP Analytics Config for Tracking AMP Pages using Google Analytics 4. This repository let you add a configuration file to your AMP setup in order to track your visits and users' interactions on Google Analytics 4.
 
@@ -15,23 +32,7 @@ Status Page: https://status.analytics-debugger.com
 
 Full configuration and information on:
 https://www.thyngster.com/how-to-track-amp-pages-with-google-analytics-4
-
-## SUPPORT / DONATIONS
-
-I'm hosting a copy of the configuration file on my own CDN for those who are not easily able to host it themselves, which actually gets (as of 25th Mar 2023)
-
-- 1.68B hits
-- 4.79TB Transfer BW
-- 548.92M Unique Visitors
-
-per month.
-
  
-I'd love to go into a higher tier on the CDN to improve the setup and have a more reliable service. So if my work helped you in fixing that tracking gap for GA4 and you would like to help on supporting the CDN costs show some appreciation by buying me some coffees I can keep working on this project and giving a free CDN service.
-    
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Q5Q225ZVD)
-
-  
 ## Setup
 Just add the following code to your AMP Pages:
 
