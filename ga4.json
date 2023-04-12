@@ -72,7 +72,8 @@
         "clientId": "CLIENT_ID(AMP_ECID_GOOGLE,,_ga,true)",
         "dataSource": "AMP",
         "isDebugEnabled": "$IF($EQUALS(QUERY_PARAM(_dbg),1), _dbg, __dbg)",
-        "endpoint": "$IF(${DISABLE_REGIONAL_DATA_COLLECTION},https://${GA4_ENDPOINT_HOSTNAME}, https://$IF($EQUALS($MATCH(${timezoneCode}, Europe, 0),Europe), $REPLACE(${GA4_ENDPOINT_HOSTNAME},www.google-analytics.com,region1.google-analytics.com), ${GA4_ENDPOINT_HOSTNAME}))"
+        "endpoint": "$IF(${DISABLE_REGIONAL_DATA_COLLECTION},https://${GA4_ENDPOINT_HOSTNAME}, https://$IF($EQUALS($MATCH(${timezoneCode}, Europe, 0),Europe), $REPLACE(${GA4_ENDPOINT_HOSTNAME},www.google-analytics.com,region1.google-analytics.com), ${GA4_ENDPOINT_HOSTNAME}))",
+	"ga4SessionCookie": "$CALC(SESSION_TIMESTAMP, 1000, divide, true).SESSION_COUNT.$IF($EQUALS(SESSION_ENGAGED, true),1,0).$CALC(TIMESTAMP, 1000, divide, true).0.0.0"
     },
     "extraUrlParams": {
         "sid": "$CALC(SESSION_TIMESTAMP, 1000, divide, true)",
