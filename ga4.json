@@ -68,7 +68,8 @@
         }
     },
     "vars": {
-        "documentLocation": "SOURCE_URL",
+        "documentLocation": "$IF($EQUALS($DEFAULT(${OVERRIDE_PAGE_LOCATION}, EMPTY), EMPTY),SOURCE_URL, ${OVERRIDE_PAGE_LOCATION})",
+        "documentTitle": "$IF($EQUALS($DEFAULT(${OVERRIDE_PAGE_TITLE}, EMPTY), EMPTY),${title}, ${OVERRIDE_PAGE_TITLE})",
         "clientId": "CLIENT_ID(AMP_ECID_GOOGLE,,_ga,true)",
         "dataSource": "AMP",
         "isDebugEnabled": "$IF($EQUALS(QUERY_PARAM(_dbg),1), _dbg, __dbg)",
@@ -100,7 +101,7 @@
     "requests": {
         "ga4IsFirstVisit": "$IF($EQUALS($CALC(SESSION_COUNT, $CALC($CALC(${timestamp}, 1000, divide, true),$CALC(SESSION_TIMESTAMP, 1000, divide, true), subtract), add),1), _fv, __nfv )",
         "ga4IsSessionStart": "$IF($EQUALS($CALC($CALC(${timestamp}, 1000, divide, true),$CALC(SESSION_TIMESTAMP, 1000, divide, true), subtract),0), _ss, __nss)",
-        "ga4SharedPayload": "v=2&tid=${GA4_MEASUREMENT_ID}&ds=${dataSource}&_p=${pageViewId}&cid=${clientId}&ul=${browserLanguage}&sr=${screenWidth}x${screenHeight}&_s=${requestCount}&dl=${documentLocation}&dr=${externalReferrer}&dt=${title}&${ga4IsFirstVisit}=1&${ga4IsSessionStart}=1&${isDebugEnabled}=1",
+        "ga4SharedPayload": "v=2&tid=${GA4_MEASUREMENT_ID}&ds=${dataSource}&_p=${pageViewId}&cid=${clientId}&ul=${browserLanguage}&sr=${screenWidth}x${screenHeight}&_s=${requestCount}&dl=${documentLocation}&dr=${externalReferrer}&dt=${${documentTitle}}&${ga4IsFirstVisit}=1&${ga4IsSessionStart}=1&${isDebugEnabled}=1",
         "ga4Pageview": {
             "baseUrl": "/g/collect?${ga4SharedPayload}&en=page_view"
         },
