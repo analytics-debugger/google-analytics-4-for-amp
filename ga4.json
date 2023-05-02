@@ -89,7 +89,8 @@
         "uam": "${uach(model)}",
         "uap": "${uach(platform)}",
         "uapv": "${uach(platformVersion)}",
-        "uaw": "$IF($EQUALS($DEFAULT(${uach(wow64)}, EMPTY), EMPTY),,$IF($EQUALS(${uach(wow64)}, false),0,1))"
+        "uaw": "$IF($EQUALS($DEFAULT(${uach(wow64)}, EMPTY), EMPTY),,$IF($EQUALS(${uach(wow64)}, false),0,1))",
+        "ep.amp_hostname": "${ampdocHost}" 
     },
     "extraUrlParamsReplaceMap": {
         "user__str_": "up.",
