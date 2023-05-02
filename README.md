@@ -1,15 +1,15 @@
 ## SUPPORT / DONATIONS
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Q5Q225ZVD)
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Q5Q225ZVD) or Sponsor me here at GIthub > [SPONSOR ME AT GITHUB](https://github.com/sponsors/thyngster "Thank YOU!")
 
 It's being a time consuming task to keep investigating this while Google decides to offer some proper official support,
 more even when I don't even run any AMP sites myself.
 
-I'm also hosting a copy of the configuration file on my own CDN for those who are not easily able to host it themselves, which actually gets (as of 25th Mar 2023)
+I'm also hosting a copy of the configuration file on my own CDN for those who are not easily able to host it themselves, which actually gets (as of 02th Mayr 2023)
 
-- 1.85 hits
-- 5.28TB Transfer BW
-- 608.8M Unique Visitors per month.
+- 2.06B hits
+- 6.21 TB Transfer BW
+- 696.89M Unique Visitors per month.
 
 I'd love to go into a higher tier on the CDN to improve the setup and have a more reliable service.
 
@@ -38,7 +38,7 @@ https://www.thyngster.com/how-to-track-amp-pages-with-google-analytics-4
 
 ## Setup
 
-Just add the following code to your AMP Pages:
+Just add the following code to your AMP Pages: ( check the table below for a full list of optional parameters and their functionality )
 
 ```javascript
 <amp-analytics  type="googleanalytics"  config="https://amp.analytics-debugger.com/ga4.json"  data-credentials="include">
@@ -54,9 +54,6 @@ Just add the following code to your AMP Pages:
     "SEND_DOUBLECLICK_BEACON": false,
     "DISABLE_REGIONAL_DATA_COLLECTION": false,
     "ENHANCED_MEASUREMENT_SCROLL": false,
-    "OVERRIDE_PAGE_LOCATION": "https://www.test.com/asdasd", // Optional
-    "OVERRIDE_PAGE_TITLE": "My Custom Title",  // Optional
-    "USER_ID": "TEST",  // Optional
   }
 }
 </script>
@@ -135,8 +132,8 @@ lines for each unique measurement ID you have.
 It is important to note that if your measurement ID is "G-THYNGSTER", the "ids" key should be structured as "_ga_THYNGSTER".
 After including these lines of code, when a user clicks on a crosslinked domain, the corresponding details will be transmitted to the destination domain.
 
-| Data Key                | Description                                                       |
-| ----------------------- | ----------------------------------------------------------------- |
+| Data Key                     | Description                                                       |
+| ---------------------------- | ----------------------------------------------------------------- |
 | **Client ID**          | Current Client Id from _ga cookie                                 |
 | **Session ID**         | Current Session ID to keep the session alive                      |
 | **Session Count**      | Current Session Count so it get written on the destination cookie |
@@ -146,7 +143,7 @@ This ensures that the current user and session remain unchanged when the users n
 
 ## Custom Page URL, Page TItle
 
-Some times you have want to send a custom URL or Page Title you may use the following variables to override the default values. 
+Some times you have want to send a custom URL or Page Title you may use the following variables to override the default values.
 
 | Variable Name                    | Example Value                     |
 | -------------------------------- | --------------------------------- |
@@ -163,11 +160,11 @@ At some point you may want to have the current real AMP hostname to be recorded.
 
 ## Setting the User ID
 
-The userId for the current user can bet using the following var: 
+The userId for the current user can bet using the following var:
 
-| Variable Name | Example Value                       |
-| ------------- | ----------------------------------- |
-| **USER_ID**  | 123e4567-e89b-12d3-a456-42661417400 |
+| Variable Name     | Example Value                       |
+| ----------------- | ----------------------------------- |
+| **USER_ID** | 123e4567-e89b-12d3-a456-42661417400 |
 
 ## Self-Hosting the JSON
 
