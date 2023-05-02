@@ -53,8 +53,10 @@ Just add the following code to your AMP Pages:
     "DEFAULT_PAGEVIEW_ENABLED": true,
     "SEND_DOUBLECLICK_BEACON": false,
     "DISABLE_REGIONAL_DATA_COLLECTION": false,
+    "ENHANCED_MEASUREMENT_SCROLL": false,
     "OVERRIDE_PAGE_LOCATION": "https://www.test.com/asdasd", // Optional
     "OVERRIDE_PAGE_TITLE": "My Custom Title",  // Optional
+    "USER_ID": "TEST",  // Optional
   }
 }
 </script>
@@ -72,6 +74,10 @@ Just add the following code to your AMP Pages:
 | DEFAULT_PAGEVIEW_ENABLED         | If enabled a `page_view` event will fire on the page load                                                                   |
 | SEND_DOUBLECLICK_BEACON          | Send a DC Hit                                                                                                                 |
 | DISABLE_REGIONAL_DATA_COLLECTION | By default the data will be sent to the regional endpoint if the current user timezone name contains `Europe`)              |
+| OVERRIDE_PAGE_LOCATION           | Will override the default page url passed by AMP                                                                              |
+| OVERRIDE_PAGE_TITLE              | Will override the default page title passed by AMP                                                                            |
+| USER_ID                          | If set the &uid will be passed back to hits.                                                                                  |
+| ENHANCED_MEASUREMENT_SCROLL      | Will send an event to GA4, at 90%, same way as GTAG Enhanced Measurment does.                                                 |
 
 ## Suported Features
 
@@ -93,10 +99,12 @@ Just add the following code to your AMP Pages:
 - **Document Referrer**
 - **Unique Pageview Id** (**`&_p`**)
 - **Debug Mode Switch** (**`&_dbg=1`**)
-- **Regional Data Collection* (**`region1.google-analytics-com`**)
+- ****Regional Data Collection* **(`region1.google-analytics-com`**)
 - **Document Referrer**
 - **Cross Domain Tracking**
 - **User Agent Client Hints**
+- **Page Title, Page URL override**
+- **User ID**
 
 ## In-Build Events
 
@@ -127,12 +135,12 @@ lines for each unique measurement ID you have.
 It is important to note that if your measurement ID is "G-THYNGSTER", the "ids" key should be structured as "_ga_THYNGSTER".
 After including these lines of code, when a user clicks on a crosslinked domain, the corresponding details will be transmitted to the destination domain.
 
-| Data Key           | Description                                                       |
-| ------------------ | ----------------------------------------------------------------- |
-| Client ID          | Current Client Id from _ga cookie                                 |
-| Session ID         | Current Session ID to keep the session alive                      |
-| Session Count      | Current Session Count so it get written on the destination cookie |
-| Session Engagement | If session is currently engaged                                   |
+| Data Key                | Description                                                       |
+| ----------------------- | ----------------------------------------------------------------- |
+| **Client ID**          | Current Client Id from _ga cookie                                 |
+| **Session ID**         | Current Session ID to keep the session alive                      |
+| **Session Count**      | Current Session Count so it get written on the destination cookie |
+| **Session Engagement** | If session is currently engaged                                   |
 
 This ensures that the current user and session remain unchanged when the users navigate from your AMP to NON-AMP pages.
 
@@ -140,18 +148,62 @@ This ensures that the current user and session remain unchanged when the users n
 
 Some times you have want to send a custom URL or Page Title you may use the following variables to override the default values. 
 
-| VAriable NAme          | Example Value                    |
-| ---------------------- | -------------------------------- |
-| OVERRIDE_PAGE_LOCATION | https://www.domain.com/custom-ur |
-| OVERRIDE_PAGE_LOCATION | My Custom Title                  |
+| Variable Name                    | Example Value                     |
+| -------------------------------- | --------------------------------- |
+| **OVERRIDE_PAGE_LOCATION** | https://www.domain.com/custom-url |
+| **OVERRIDE_PAGE_LOCATION** | My Custom Title                   |
 
 ## Enable Debug Mode
 
 Add a ?_dbg=1 parameter to the current url to allow hits to show on GA4's DebugView
 
-## How to add Event Parameters
+## AMP Hostname Reporting
 
-Check Post Link on Top
+At some point you may want to have the current real AMP hostname to be recorded. To filter out the traffic from the AMP CDN and your domain. An event paratemer named "***amp_hostname***" is now passed back to the hits, so you can use on your reports. Remember you'll need to register this parameter as a dimensio within GA4 admin.
+
+## Setting the User ID
+
+The userId for the current user can bet using the following var: 
+
+| Variable Name | Example Value                       |
+| ------------- | ----------------------------------- |
+| **USER_ID**  | 123e4567-e89b-12d3-a456-42661417400 |
+
+## Self-Hosting the JSON
+
+When using a third-party integration or not utilizing the provided CDN, it is important to note that the tracking feature may not be updated. Therefore, it is essential to update the core file.
+
+In the event that you choose to host the file yourself, it is necessary to take into account the CORS headers. While accessing the version from your own domain should not pose an issue, it is important to keep in mind that most users will load at least the first page from Google/AMP CDN domains. Failure to set the headers appropriately may result in the file being blocked.
+
+I'm provinding some example about how to do this in some platforms/languages
+
+### PHP
+
+```php
+header("Access-Control-Allow-Origin: $_SERVER['HTTP_ORIGIN']");
+header("Access-Control-Allow-Credentials: true");
+```
+
+### NGINX
+
+```nginx
+location = /ga4.json {
+    add_header Access-Control-Allow-Origin $http_origin;
+    add_header Access-Control-Allow-Credentials true;
+#    proxy_pass or try_files or whatever might need to go here
+}
+```
+
+via @**[fanatixgithub](https://github.com/fanatixgithub)**
+
+### Apache / .htaccess
+
+```apache
+  Header set Access-Control-Allow-Origin "https://cdn.ampproject.org"
+  Header set Access-Control-Allow-Origin "true"
+```
+
+* *Not sure how to grab the Http Origin from Apache*
 
 ## How to add User Properties
 
