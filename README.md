@@ -7,9 +7,11 @@ more even when I don't even run any AMP sites myself.
 
 I'm also hosting a copy of the configuration file on my own CDN for those who are not easily able to host it themselves, which actually gets (as of 02th Mayr 2023)
 
-- 2.06B hits
-- 6.21 TB Transfer BW
-- 696.89M Unique Visitors per month.
+- 2.23B hits
+- 6.81 TB Transfer BW
+- 712.09M Unique Visitors per month.
+- 30K DNS Queries/min
+- 251.3K Security Threats
 
 I'd love to go into a higher tier on the CDN to improve the setup and have a more reliable service.
 
@@ -102,11 +104,16 @@ Just add the following code to your AMP Pages: ( check the table below for a ful
 - **User Agent Client Hints**
 - **Page Title, Page URL override**
 - **User ID**
+- **Conversions**
+- **Override Attribution Data, including: Source, Medium, Campaign, Term, Content, Id parameters.**
+- **Ignore Referral Support**
+- **Content Grouping**
 
 ## In-Build Events
 
 - **Web Vitals**
 - **Performance Timing**
+- **Scroll Tracking**
 
 ## Cross-Domain Tracking
 
@@ -149,6 +156,51 @@ Some times you have want to send a custom URL or Page Title you may use the foll
 | -------------------------------- | --------------------------------- |
 | **OVERRIDE_PAGE_LOCATION** | https://www.domain.com/custom-url |
 | **OVERRIDE_PAGE_LOCATION** | My Custom Title                   |
+
+## Overriding Campaign Data
+
+If you want to override the current campaign data with any of your events , just use the following parameters within the events:
+
+```
+"extraUrlParams": {
+     "campaign_source": "google", // Matches as having an utm_source querystring parameter
+     "campaign_medium": "cpc", // Matches as having an utm_medium querystring parameter
+     "campaign_name": "mycampaign", // Matches as having an utm_name querystring parameter
+     "campaign_content": "my content", // Matches as having an utm_content querystring parameter
+     "campaign_term": "campaign term" // Matches as having an utm_term querystring parameter
+     "campaign_id": "23" // Matches as having an utm_id querystring parameter
+}
+```
+
+## Set a Conversion
+
+You can not set your events as conversions, just add the `"is_conversion": "1"` extraUrl Parameter to the current event you want to be counted as a conversion as follows:
+
+```
+"extraUrlParams": {
+    "is_conversion": "1"
+}
+```
+
+## Ignore Referral 
+
+You may want Google Analytics 4 to ignore some referral. You may build the logic yourself and the set this variable to make GA4 ignore the referral info at processing time.
+
+```
+"extraUrlParams": {
+    "ignore_referral": "1"
+}
+```
+
+## Content Grouping
+
+You can set your content grouping for your hits in an easy way, just add the following extra parameter to your events definition:
+
+```
+"extraUrlParams": {
+    "content_group": "men"
+}
+```
 
 ## Enable Debug Mode
 
