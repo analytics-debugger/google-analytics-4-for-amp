@@ -112,7 +112,16 @@
         "user__str_": "up.",
         "user__num_": "upn.",
         "event__str_": "ep.",
-        "event__num_": "epn."
+        "event__num_": "epn.",
+        "is_conversion": "_c",
+        "campaign_source": "cs",
+        "campaign_medium": "cm",
+        "campaign_name": "cn",
+        "campaign_content": "cc",
+        "campaign_term": "ck",
+        "campaign_id": "ci",
+        "ignore_referral": "ir",
+        "content_group": "ep.content_group"        
     },
     "requestOrigin": "${endpoint}",
     "requests": {
