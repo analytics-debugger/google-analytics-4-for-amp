@@ -55,7 +55,7 @@ Just add the following code to your AMP Pages: ( check the table below for a ful
     "DEFAULT_PAGEVIEW_ENABLED": true,
     "SEND_DOUBLECLICK_BEACON": false,
     "DISABLE_REGIONAL_DATA_COLLECTION": false,
-    "ENHANCED_MEASUREMENT_SCROLL": false,
+    "ENHANCED_MEASUREMENT_SCROLL": false
   }
 }
 </script>
