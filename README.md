@@ -99,7 +99,7 @@ Just add the following code to your AMP Pages: ( check the table below for a ful
 - **Document Referrer**
 - **Unique Pageview Id** (**`&_p`**)
 - **Debug Mode Switch** (**`&_dbg=1`**)
-- ****Regional Data Collection* **(`region1.google-analytics-com`**)
+- **Regional Data Collection** (**`region1.google-analytics-com`**)
 - **Document Referrer**
 - **Cross Domain Tracking**
 - **User Agent Client Hints**
@@ -115,7 +115,8 @@ Just add the following code to your AMP Pages: ( check the table below for a ful
 
 - **Web Vitals**
 - **Performance Timing**
-- **Scroll Tracking**
+- **Scroll Tracking** (Enhanced Measurement)
+
 
 ## Cross-Domain Tracking
 
