@@ -100,6 +100,7 @@ Just add the following code to your AMP Pages: ( check the table below for a ful
 - **Unique Pageview Id** (**`&_p`**)
 - **Debug Mode Switch** (**`&_dbg=1`**)
 - **Regional Data Collection** (**`region1.google-analytics-com`**)
+- **DoubleClick Data Tracking**
 - **Document Referrer**
 - **Cross Domain Tracking**
 - **User Agent Client Hints**
@@ -109,8 +110,8 @@ Just add the following code to your AMP Pages: ( check the table below for a ful
 - **Override Attribution Data, including: Source, Medium, Campaign, Term, Content, Id parameters.**
 - **Ignore Referral Support**
 - **Content Grouping**
+- **Page URL and Title Override**
 - **User Engagement Time**
-
 ## In-Build Events
 
 - **Web Vitals**
