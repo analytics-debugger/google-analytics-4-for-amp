@@ -109,6 +109,7 @@ Just add the following code to your AMP Pages: ( check the table below for a ful
 - **Override Attribution Data, including: Source, Medium, Campaign, Term, Content, Id parameters.**
 - **Ignore Referral Support**
 - **Content Grouping**
+- **User Engagement Time**
 
 ## In-Build Events
 
