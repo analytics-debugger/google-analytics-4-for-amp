@@ -19,6 +19,19 @@
             "on": "visible",
             "request": "ga4Pageview"
         },
+        "user_engagement": {
+          "on": "visible",
+          "request": "ga4Event",
+          "vars": {
+             "ga4_event_name": "user_engagement"
+          },
+          "visibilitySpec": {
+                  "wait-for": "ini-load",
+                  "selector": "body",
+                  "totalTimeMin": 1000,
+                  "reportWhen": "documentExit"
+          }
+        },	    
         "doubleClick": {
             "enabled": "${SEND_DOUBLECLICK_BEACON}",
             "on": "visible",
