@@ -1,17 +1,18 @@
 ## SUPPORT / DONATIONS
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Q5Q225ZVD) or Sponsor me here at GIthub > [SPONSOR ME AT GITHUB](https://github.com/sponsors/thyngster "Thank YOU!")
-
+Sponsor me here at GITHUB [![ko-fi](https://www.github.com/analytics-debugger/google-analytics-4-for-amp/assets/1494564/012b7edb-de40-4fa8-b1d4-ebd2e1ef0342)](https://github.com/sponsors/thyngster) or buy me a coffee at 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Q5Q225ZVD)
+ 
 It's being a time consuming task to keep investigating this while Google decides to offer some proper official support,
 more even when I don't even run any AMP sites myself.
 
 I'm also hosting a copy of the configuration file on my own CDN for those who are not easily able to host it themselves, which actually gets (as of 02th Mayr 2023)
 
-- 2.23B hits
-- 6.81 TB Transfer BW
-- 712.09M Unique Visitors per month.
+- 2,57B hits
+- 8,06 TB Transfer BW
+- 815,84M Unique Visitors per month.
 - 30K DNS Queries/min
-- 251.3K Security Threats
+- 340,51k Security Threats
 
 I'd love to go into a higher tier on the CDN to improve the setup and have a more reliable service.
 
@@ -98,7 +99,8 @@ Just add the following code to your AMP Pages: ( check the table below for a ful
 - **Document Referrer**
 - **Unique Pageview Id** (**`&_p`**)
 - **Debug Mode Switch** (**`&_dbg=1`**)
-- ****Regional Data Collection* **(`region1.google-analytics-com`**)
+- **Regional Data Collection** (**`region1.google-analytics-com`**)
+- **DoubleClick Data Tracking**
 - **Document Referrer**
 - **Cross Domain Tracking**
 - **User Agent Client Hints**
@@ -108,12 +110,14 @@ Just add the following code to your AMP Pages: ( check the table below for a ful
 - **Override Attribution Data, including: Source, Medium, Campaign, Term, Content, Id parameters.**
 - **Ignore Referral Support**
 - **Content Grouping**
-
+- **Page URL and Title Override**
+- **User Engagement Time**
 ## In-Build Events
 
 - **Web Vitals**
 - **Performance Timing**
-- **Scroll Tracking**
+- **Scroll Tracking** (Enhanced Measurement)
+
 
 ## Cross-Domain Tracking
 
