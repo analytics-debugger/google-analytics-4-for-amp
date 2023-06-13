@@ -1,7 +1,7 @@
 ## ANNOUNCEMENT
 There was a pull request merged (May 31, 2023, 8:51 PM GMT+2) on ```<AMP Analytics>``` GTAG vendor, related to session_id, session_count, and current_timestamp, which are the values used for building a proper GA4 (_ga_THYNGSTER) , cookie value, you can review that here: https://github.com/ampproject/amphtml/pull/39062/commits/cd4654ecd22ab6b600eda0022d6a0505e89b08b5 .
 
-Certainly, it is important to note that as of the current date (2023-06-12), there haven't been any official statements confirming the provision of official support for AMP. The only indication we have is the statement "we are working on it." However, in my view, this situation presents a promising opportunity for GA4 to extend official support to AMP, which would be advantageous for everyone involved rather than relying on the workaround I developed. If official support is eventually implemented, this repository will be archived.
+Certainly, it is important to note that as of the current date (2023-06-12), there haven't been any official announments confirming the provision of official support for AMP. The only indication we have is the statement "we are working on it." However, in my view, this situation presents a promising opportunity for GA4 to extend official support to AMP, which would be advantageous for everyone involved rather than relying on the workaround I developed. If official support is eventually implemented, this repository will be archived.
 
 ## SUPPORT / DONATIONS
 
