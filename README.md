@@ -18,11 +18,11 @@ more even when I don't even run any AMP sites myself.
 
 I'm also hosting a copy of the configuration file on my own CDN for those who are not easily able to host it themselves, which actually gets (as of 02th Mayr 2023)
 
-- 2,57B hits
-- 8,06 TB Transfer BW
-- 815,84M Unique Visitors per month.
-- 30K DNS Queries/min
-- 340,51k Security Threats
+- 3,94B hits
+- 13,09 TB Transfer BW
+- 1,03B Unique Visitors per month.
+- 36K DNS Queries/min
+- 588,51k Security Threats
 
 I'd love to go into a higher tier on the CDN to improve the setup and have a more reliable service.
 
